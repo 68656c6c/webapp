@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href=" {{ url_for('static', filename='css/css.css') }}">
+<meta charset="UTF-8">
+</head>
+<body>
+<div class="mainUI">
+<form name="dataForm" action="." method="post" class="dataForm">
+        <ul class="noBullet">
+        <li>
+        <label for="vmname"></label>
+        <input type="text" name="vmname" class="inputFields" id="vmname" placeholder="Name" required/>
+        </li>
+
+        <li>
+        <select name="operation-system" class="optionFields" required>
+                <option value="deb9">Debian 9</option>
+                <option value="winsrv16">Windows Server 2016</option>
+                <option value="winsrv19">Windows Server 2019</option>
+        </select>
+        </li>
+        <li>
+        <label for="vmcpus"></label>
+        <input type="number" min="0" name="vmcpus" class="inputFields" id="vmcpus" placeholder="Number of CPUs" required/>
+        </li>
+
+        <li>
+        <label for="vmmemory"></label>
+        <input type="number" min="1024" name="vmmemory" class="inputFields" id="vmmemory" placeholder="Memory (MB)" required/>
+        </li>
+
+        <li>
+        <label for="vmdisksize"></label>
+        <input type="number" min="40" max="100" name="vmdisksize" class="inputFields" id="vmdisksize" placeholder="Disk size (GB)" required/>
+        </li>
+
+        <li>
+        <select name="network-cards" class="optionFields" required>
+                <option value="DPG-DMZ">DMZ</option>
+                <option value="DPG-DEATH">DEATH</option>
+                <option value="LAN">LAN</option>
+        </select>
+        </li>
+
+        <li id="center-vm-button">
+             <input type="submit" id="createvmButton" name="create vm" alt="create vm" value="Create VM">
+        </li>
+        </ul>
+</form>
+</div>
+</body>
+</html>
